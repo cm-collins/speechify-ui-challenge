@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Compose UI Challenge</string>
+    <string name="book_image">book image</string>
+    <string name="details">Details</string>
+    <string name="search_label">Search books</string>
+    <string name="search_placeholder">Type a book name</string>
+    <string name="book_details_title">Book Details</string>
+    <string name="by_author">by %1$s</string>
+    <string name="rating_and_reviews">%1$.1f (%2$d reviews)</string>
+    <string name="about_book">About this book</string>
+</resources>
