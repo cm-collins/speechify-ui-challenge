@@ -62,7 +62,7 @@ class BooksRepositoryImpl @Inject constructor(
                 author = it.details.authors.first(),
                 description = it.description.orEmpty(),
                 rating = it.details.goodreadsRating.rating.toFloat(),
-                reviewCount = it.details.goodreadsRating.count.toString().take(3).toInt(),
+                reviewCount = it.details.goodreadsRating.count,
             )
         }
     }
