@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Text
+import com.speechify.composeuichallenge.ui.navigation.NAVGraph
 import com.speechify.composeuichallenge.ui.theme.ComposeUIChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,6 +18,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeUIChallengeTheme {
                 Text("build the app")
+
+                NAVGraph()
             }
         }
     }
