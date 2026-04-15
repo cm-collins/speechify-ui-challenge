@@ -42,10 +42,14 @@ fun NAVGraph(
                     type = NavType.StringType
                 }
             )
-        ) {
+        ) { backStackEntry ->
+            val bookId = backStackEntry.arguments?.getString(Screen.BookDetail.ARGUMENT_KEY).orEmpty()
+
             BookDetailScreen(
+                bookId = bookId,
                 onNavigateBack = {
-                    navController.popBackStack()                }
+                    navController.popBackStack()
+                }
             )
         }
     }

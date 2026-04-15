@@ -2,10 +2,17 @@
     <string name="app_name">Compose UI Challenge</string>
     <string name="book_image">book image</string>
     <string name="details">Details</string>
+    <string name="retry">Retry</string>
+    <string name="back">Back</string>
     <string name="search_label">Search books</string>
-    <string name="search_placeholder">Type a book name</string>
+    <string name="search_placeholder">Search for books...</string>
+    <string name="empty_books_for_query">No books found for \"%1$s\"</string>
     <string name="book_details_title">Book Details</string>
     <string name="by_author">by %1$s</string>
     <string name="rating_and_reviews">%1$.1f (%2$d reviews)</string>
     <string name="about_book">About this book</string>
+    <string name="book_not_found">Book not found.</string>
+    <string name="books_load_error">Something went wrong while loading books.</string>
+    <string name="books_search_error">Something went wrong while searching.</string>
+    <string name="book_detail_load_error">Something went wrong while loading this book.</string>
 </resources>

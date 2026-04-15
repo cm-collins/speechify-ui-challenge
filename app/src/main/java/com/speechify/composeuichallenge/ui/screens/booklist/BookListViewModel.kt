@@ -2,9 +2,12 @@ package com.speechify.composeuichallenge.ui.screens.booklist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.speechify.composeuichallenge.R
 import com.speechify.composeuichallenge.data.Book
 import com.speechify.composeuichallenge.repository.BooksRepository
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.lifecycle.HiltViewModel
+import android.content.Context
 import javax.inject.Inject
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,7 +25,8 @@ import kotlinx.coroutines.launch
  */
 @HiltViewModel
 class BookListViewModel @Inject constructor(
-    private val booksRepository: BooksRepository
+    private val booksRepository: BooksRepository,
+    @param:ApplicationContext private val context: Context
 ) : ViewModel() {
 
     /**
@@ -117,7 +121,7 @@ class BookListViewModel @Inject constructor(
                     currentState.copy(
                         isLoading = false,
                         books = emptyList(),
-                        errorMessage = "Something went wrong while loading books."
+                        errorMessage = context.getString(R.string.books_load_error)
                     )
                 }
             }
@@ -134,7 +138,7 @@ class BookListViewModel @Inject constructor(
                 _uiState.update { currentState ->
                     currentState.copy(
                         books = emptyList(),
-                        errorMessage = "Something went wrong while searching."
+                        errorMessage = context.getString(R.string.books_search_error)
                     )
                 }
                 return@launch

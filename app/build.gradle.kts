@@ -35,10 +35,21 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlin {
-        jvmToolchain(17)
+        // This repo originally pinned the Kotlin compiler to a Java 17 toolchain.
+        // In this environment we have Java 21 available, but not Java 17, and toolchain
+        // auto-download isn't configured. Using a Java 21 toolchain is fine here because
+        // we still compile Java source/target as 17 via `compileOptions` above.
+        jvmToolchain(21)
     }
     buildFeatures {
         compose = true
+    }
+
+    // Keep Java + Kotlin bytecode targets consistent.
+    // Java is configured above with source/targetCompatibility = 17.
+    // Kotlin defaults can drift when the compiler runs on a newer JDK, so we pin it.
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
